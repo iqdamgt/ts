@@ -1,0 +1,114 @@
+/* MIDNIGHT LAB - tampilan minimalis untuk HP (aktif bila body.mn). Dimuat paling akhir. */
+body.mn{--mn-a:#c33}
+
+/* ---------- Menu utama: logo di kiri, tombol di kanan ---------- */
+body.mn #ov{flex-direction:row;justify-content:center;align-items:center;gap:6vw}
+body.mn #ov>h1+div,body.mn #ov .mhint{display:none}
+body.mn #ov h1.ti{margin:0;flex:0 1 auto}
+body.mn #ov h1.ti img{max-width:min(44vw,460px);max-height:60vh}
+body.mn #ov .mbt{flex:0 0 auto;flex-direction:row;flex-wrap:wrap;gap:8px;width:min(40vw,300px);margin:0;justify-content:stretch}
+body.mn #ov .mbt button{margin:0;flex:1 1 28%;padding:10px 6px;font-size:13px;letter-spacing:.06em;background:transparent;border:1px solid #633;color:#caa;border-radius:8px}
+body.mn #ov .mbt #go{flex:1 1 100%;padding:16px;font-size:20px;letter-spacing:.2em;background:#a22;border-color:#e55;color:#fff}
+body.mn #ov .mbt #pwi{flex:1 1 100%}
+@media(orientation:portrait){
+ body.mn #ov{flex-direction:column;gap:18px}
+ body.mn #ov h1.ti img{max-width:min(80vw,420px)}
+ body.mn #ov .mbt{width:min(86vw,360px)}
+}
+
+/* ---------- Layar pilihan (mode, room, mapel, kesulitan): kartu ringkas 2 kolom ---------- */
+body.mn #md h1,body.mn #sm h1,body.mn #mm h1,body.mn #mpk h1,body.mn #gd h1,
+body.mn #pd h1,body.mn #ab h1,body.mn #rkb h1,body.mn #lby h1{font-size:18px;letter-spacing:.16em;margin:0 0 6px;font-weight:600}
+body.mn #mc,body.mn #mc2,body.mn #mc3,body.mn #mpkc{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:min(94vw,680px);margin-top:8px}
+body.mn #mc3>#mjr{grid-column:1/-1}
+body.mn #mc button,body.mn #mc2 button,body.mn #mc3>button,body.mn #mpkc button{padding:12px 14px;border-radius:10px;border-width:1px;border-left-width:5px;min-height:56px}
+body.mn #mc button b,body.mn #mc2 b,body.mn #mc3>button b{font-size:16px;letter-spacing:.1em}
+body.mn #mc button span,body.mn #mc2 span,body.mn #mc3>button span{font-size:12px;opacity:.75;margin-top:3px;line-height:1.35}
+body.mn #mpkc button{font-size:16px;letter-spacing:.06em}
+@media(orientation:portrait){body.mn #mc,body.mn #mc2,body.mn #mc3,body.mn #mpkc{grid-template-columns:1fr}}
+/* tombol kembali: tidak menonjol */
+body.mn #mb,body.mn #sb,body.mn #mm0,body.mn #rkx,body.mn #pdx,body.mn #abx{background:transparent;border:1px solid #555;color:#bbb;padding:9px 26px;margin-top:10px;border-radius:8px}
+
+/* ---------- Cara bermain: 3 kartu pendek ---------- */
+body.mn #gd .gb{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:min(94vw,780px);font-size:13px;line-height:1.45;margin-top:6px}
+body.mn #gd .gb .mc{background:#1a0808;border:1px solid #533;border-radius:10px;padding:10px 12px}
+body.mn #gd .gb .mc h3{margin:0 0 6px;font-size:13px;letter-spacing:.12em;color:#e55}
+@media(orientation:portrait){body.mn #gd .gb{grid-template-columns:1fr}}
+body.mn #gs{margin-top:12px;padding:14px 40px;font-size:18px;letter-spacing:.16em;background:#a22;border-color:#e55;color:#fff;border-radius:8px}
+
+/* ---------- HUD & kontrol: tipis dan tidak mengganggu ---------- */
+body.mn #hud{font-size:13px;opacity:.7;background:#0006;padding:3px 9px;border-radius:12px;top:calc(8px + env(safe-area-inset-top,0px))}
+body.mn #cfgb{opacity:.35;padding:2px 10px;font-size:18px}
+body.mn #fl,body.mn #rn{opacity:.55;background:#0005;border-color:#fff4}
+body.mn #rn.on{opacity:.9}
+body.mn #jy{opacity:.6}
+body.mn #pr{font-size:15px;padding:8px 16px;border-radius:20px;background:#000a}
+
+/* ---------- Kertas soal: pilihan jawaban besar & mudah ditekan ---------- */
+body.mn #pn{border-radius:12px}
+body.mn #pn button{min-height:44px;border-radius:8px}
+
+/* ---------- Pengaturan, rekap, rekor: rapi di layar pendek ---------- */
+body.mn #cfg .bx{width:min(94vw,520px);max-width:none}
+body.mn #cfg .bx label{display:block;margin:8px 0}
+body.mn #c_mn_row{margin:10px 0}
+body.mn #rr .rrb,body.mn .rrw{max-width:min(94vw,720px)}
+body.mn #rr button,body.mn #rkb button{border-radius:8px;min-height:40px}
+
+/* ---------- Pengaturan: lembar penuh, 2 kolom, TUTUP selalu terlihat ---------- */
+body.mn #cfg{align-items:stretch;justify-content:center;
+ padding:calc(6px + env(safe-area-inset-top,0px)) calc(8px + env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) calc(8px + env(safe-area-inset-left,0px))}
+body.mn #cfg .bx{display:flex;flex-direction:column;width:min(100%,820px);max-width:none;height:100%;max-height:none;margin:0 auto;padding:10px 18px;overflow:hidden;box-sizing:border-box}
+body.mn #cfg h2{flex:0 0 auto;margin:0 0 6px;font-size:18px;letter-spacing:.16em}
+body.mn #cfg .cfgw{flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;touch-action:pan-y;
+ display:grid;grid-template-columns:1fr 1fr;column-gap:32px;align-content:start;padding-right:4px}
+body.mn #cfg .cfgw>h3,body.mn #cfg .cfgw>#c_gnote,body.mn #cfg .cfgw>p{grid-column:1/-1}
+body.mn #cfg h3{margin:12px 0 2px}
+body.mn #cfg .cfgw>h3:first-child{margin-top:0}
+body.mn #cfg label{margin:7px 0;font-size:14px}
+body.mn #cfg .ck{align-items:center;gap:10px;min-height:36px}
+body.mn #cfg select{min-height:40px}
+body.mn #cfg #c_ok{flex:0 0 auto;margin:8px auto 0;padding:10px 48px;background:#a22;border-color:#e55;color:#fff;border-radius:8px}
+@media(orientation:portrait){body.mn #cfg .cfgw{grid-template-columns:1fr}}
+
+/* ---------- Lobi multiplayer, rekor, tentang, rekap hasil ---------- */
+body.mn #lby h1{margin:0 0 2px}
+body.mn #lby .lbw{display:flex;gap:24px;width:min(96vw,860px);align-items:flex-start;text-align:center}
+body.mn #lby .lbl,body.mn #lby .lbr{flex:1 1 0;min-width:0}
+body.mn #m_code{font-size:26px}
+body.mn #m_modes{margin:6px 0;justify-content:center;flex-wrap:wrap}
+body.mn #m_modes button,body.mn #m_subs button{padding:6px 10px;font-size:13px}
+body.mn #m_subs{gap:6px;margin:6px 0}
+body.mn #lby input#m_in{width:100%;margin-top:4px;box-sizing:border-box}
+body.mn #m_row{justify-content:center}
+body.mn #m_list{margin:6px 0;line-height:1.5;font-size:14px}
+body.mn #m_log{max-height:70px;overflow:auto}
+body.mn #lby #m_start,body.mn #lby #m_out{margin:6px 4px 0}
+body.mn .pdw{width:min(94vw,760px)}
+body.mn #rkb h1,body.mn #ab h1{margin-top:0}
+body.mn .abc{padding:8px 12px;margin:6px 0}
+body.mn .pdw h2{margin:12px 0 4px;font-size:1em}
+body.mn #rkt button{padding:7px 14px}
+body.mn .rkr{padding:4px 0;font-size:14px}
+body.mn #rr .rrb h1{font-size:30px;margin:0}
+@media(orientation:portrait){body.mn #lby .lbw{flex-direction:column;gap:0}}
+@media(orientation:landscape){
+ body.mn #rkc .abc:has(>.rkr){display:grid;grid-template-columns:1fr 1fr;column-gap:28px}
+ body.mn #rr .rrb{width:min(96vw,860px)}
+ body.mn #rr_g{grid-template-columns:repeat(6,1fr);gap:6px;margin:8px 0}
+ body.mn #rr_g div{padding:6px 3px}
+ body.mn #rr_g b{font-size:clamp(14px,2.4vw,19px)}
+ body.mn #rr_g small{font-size:11px}
+ body.mn #rr h3{margin:10px 0 4px}
+ body.mn .rrbt{margin:8px 0 2px}
+}
+
+/* ---------- v2.4: semua layar di luar game = halaman yang bisa di-scroll atas-bawah (seperti Panduan) ---------- */
+body.mn :is(#ov,#md,#sm,#mm,#mpk,#gd,#pd,#ab,#rkb,#rr,#rz,#lby,#cfg,#dc,#dlg){overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#c33 #1a0808}
+body.mn :is(#ov,#md,#sm,#mm,#mpk,#gd,#pd,#ab,#rkb,#rr,#rz,#lby,#cfg,#dc,#dlg)::-webkit-scrollbar{width:6px}
+body.mn :is(#ov,#md,#sm,#mm,#mpk,#gd,#pd,#ab,#rkb,#rr,#rz,#lby,#cfg,#dc,#dlg)::-webkit-scrollbar-thumb{background:#c33;border-radius:3px}
+/* Pengaturan: overlay-nya sendiri yang di-scroll, tombol TUTUP menempel di bawah */
+body.mn #cfg{align-items:flex-start}
+body.mn #cfg .bx{display:block;height:auto;max-height:none;overflow:visible;margin:auto}
+body.mn #cfg .cfgw{display:grid;overflow:visible;flex:none}
+body.mn #cfg #c_ok{position:sticky;bottom:8px;display:block}
